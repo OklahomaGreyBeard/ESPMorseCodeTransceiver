@@ -9,6 +9,8 @@ alt="ESP Morse Code Transceiver Video" width="240" height="180" border="10" /></
 
 I used a J-38 WW2 era telegraph key, which can be purchased rather inexpensively on ebay, and 3d printed a case for the bottom for an ESP8266.  I implemented a websocket interface, web server, and morse code decoder, and encoder / sounder.
 
+The original idea for this project was to simply make an IoT button, but things evolved when the idea for dynamic command structures via Morse code came about. With a bit of code extension, this system can easily be made into an internet of things button for home automation, not unlike the amazon 'dash' button, but with the ability to key in dynamic data.  One example would be outputting a REST or MQTT command such as "L50" to a system like OpenHAB, to turn a light on to a 50% dimmer setting.
+
 It can work as a training device, or with a bit of work, send commands to home automation systems, twitter, etc.
 
 ![alt text](https://github.com/evanmj/ESPMorseCodeTransceiver/blob/master/Photos/Web%20Interface.png "WebUI")
