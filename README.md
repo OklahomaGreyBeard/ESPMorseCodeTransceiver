@@ -3,10 +3,15 @@ A web enabled internet of things morse code sending key with a receiving speaker
 
 See a video about this project here:
 
-I used a J-38 WW2 era telegraph key, and implemented a websocket interface, web server, and morse code decoder, and encoder / sounder.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=fGk9IvxCnt0
+" target="_blank"><img src="http://img.youtube.com/vi/fGk9IvxCnt0/0.jpg" 
+alt="ESP Morse Code Transceiver Video" width="240" height="180" border="10" /></a>
+
+I used a J-38 WW2 era telegraph key, which can be purchased rather inexpensively on ebay, and 3d printed a case for the bottom for an ESP8266.  I implemented a websocket interface, web server, and morse code decoder, and encoder / sounder.
 
 It can work as a training device, or with a bit of work, send commands to home automation systems, twitter, etc.
 
+![alt text](https://github.com/evanmj/ESPMorseCodeTransceiver/blob/master/Photos/Web%20Interface.png "WebUI")
 ![alt text](https://github.com/evanmj/ESPMorseCodeTransceiver/blob/master/Photos/Closed.jpg "Closed")
 ![alt text](https://github.com/evanmj/ESPMorseCodeTransceiver/blob/master/Photos/Open%201.jpg "Open")
 
