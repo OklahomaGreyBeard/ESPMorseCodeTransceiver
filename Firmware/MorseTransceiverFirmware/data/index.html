@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="./material.min.css">
+<script src="./material.min.js"></script>
+
+
+
+
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+</style>
+
+
+
+MorseCodeTransceiver: <span id="status"></span><BR><BR>
+
+<span id="result"></span>
+
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Keyed in Text</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Text Goes Here
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Clear Button
+    </a>
+  </div>
+</div>
+
+
+<script>
+
+	// Function to send status update to 'status' div
+    UpdateStatus = function(message) {
+        var outputEl	= document.getElementById('status');
+        outputEl.innerHTML	= message
+    } ;
+    
+     var connection = new WebSocket('ws://'+location.hostname+':81/', ['arduino']);
+     //var connection = new WebSocket('ws://'+'192.168.0.117+':81/', ['arduino']);  For local dev on a pc
+	 
+     connection.onopen = function () {  
+         connection.send('Connect ' + new Date()); 
+         console.log('connected to socket');
+         UpdateStatus('Connected. to key');
+	
+     };
+     
+	 // Websocket connection error.
+	 connection.onerror = function (error) {
+        console.log('WebSocket Error ', error);
+        UpdateStatus('Error: ' + error);
+     };
+     
+	 // Message received from server.
+	 connection.onmessage = function (e) {  
+        console.log('Server Sent client: ', e.data);
+      };
+     
+     function sendPacket() {  
+         console.log('Sending Packet to server from client: '); 
+         connection.send("Hello");
+     }
+      
+   //  setInterval(function(){
+                    
+//		console.log(userinput);
+	//	connection.send(userinput);
+		
+
+	//}, 1000/25); 
+      
+</script></body>
+</html>
